@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {registerRequest} from '../actions';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 import '../assets/styles/components/Register.scss';
 
 const Register = props => {
@@ -26,7 +27,9 @@ const Register = props => {
      }
 
      return(
-     <section className="register">
+     <>
+          <Header isRegister />
+          <section className="register">
           <section className="register__container">
           <h2>Regístrate</h2>
                <form className="register__container--form" onSubmit={handleSubmit}>
@@ -59,7 +62,8 @@ const Register = props => {
                
           </section>
      </section>
-)};
+     </>
+     )};
 
 const mapDispatchToProps = {
      registerRequest,
